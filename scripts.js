@@ -17,15 +17,13 @@ form.addEventListener("submit", (event) => {
     result.innerText = "Something critical went wrong. Please reload the page";
     console.error("Error: Invalid input");
     return;
-  }
-  // Preventing 0 as an input in divider
-  if (divider !== 0) {
+  } else if (divider !== 0) {
+    // Preventing 0 as an input in divider
     result.innerText =
       "Division not performed. Invalid number provided. Try again";
     console.error("Invalid value");
     return;
   }
-
   // Added Math.trunc() to remove decimals
   result.innerText = Math.trunc(dividend / divider);
 });
