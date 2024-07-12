@@ -12,14 +12,14 @@ form.addEventListener("submit", (event) => {
       "Division not performed. Both values are required in inputs. Try again";
     return;
   }
-  // Checking if there's only numberrs inputed
+  // Checking if there's only numbers entered in input fields
   if (isNaN(dividend) || isNaN(divider)) {
     result.innerText = "Something critical went wrong. Please reload the page";
     console.error("Error: Invalid input");
     return;
   }
   // Preventing 0 as an input in divider
-  if (divider === 0) {
+  if (divider !== 0) {
     result.innerText =
       "Division not performed. Invalid number provided. Try again";
     console.error("Invalid value");
@@ -29,5 +29,3 @@ form.addEventListener("submit", (event) => {
   // Added Math.trunc() to remove decimals
   result.innerText = Math.trunc(dividend / divider);
 });
-
-
